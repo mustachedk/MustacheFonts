@@ -1,0 +1,7 @@
+fonts:
+  inputs: Sources/MustacheFonts/Fonts
+  outputs:
+    templateName: swift5
+    output: Sources/FontFamily.swift
+    params:
+      publicAccess: true
