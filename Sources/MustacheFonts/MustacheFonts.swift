@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-public struct MustacheFonts {
+public class MustacheFonts {
     
     public static func registerFonts() {
         FontFamily.Gotham.all.forEach { registerFont(bundle: .module, fontName: $0.name) }
