@@ -4,24 +4,33 @@ import SwiftUI
 public class MustacheFonts {
     
     public static func registerFonts() {
-        FontFamily.Gotham.all.forEach { registerFont(bundle: .module, fontName: $0.name) }
-        FontFamily.Kollektif.all.forEach { registerFont(bundle: .module, fontName: $0.name) }
-        FontFamily.Poppins.all.forEach { registerFont(bundle: .module, fontName: $0.name) }
-        FontFamily.SFMono.all.forEach { registerFont(bundle: .module, fontName: $0.name) }
-        FontFamily.SFProDisplay.all.forEach { registerFont(bundle: .module, fontName: $0.name) }
-        FontFamily.SFProText.all.forEach { registerFont(bundle: .module, fontName: $0.name) }
-        FontFamily.SourceSansPro.all.forEach { registerFont(bundle: .module, fontName: $0.name) }
+        FontFamily.Gotham.all.forEach { registerFont(bundle: .module, atPath: $0.path) }
+        FontFamily.Kollektif.all.forEach { registerFont(bundle: .module, atPath: $0.path) }
+        FontFamily.Poppins.all.forEach { registerFont(bundle: .module, atPath: $0.path) }
+        FontFamily.SFMono.all.forEach { registerFont(bundle: .module, atPath: $0.path) }
+        FontFamily.SFProDisplay.all.forEach { registerFont(bundle: .module, atPath: $0.path) }
+        FontFamily.SFProText.all.forEach { registerFont(bundle: .module, atPath: $0.path) }
+        FontFamily.SourceSansPro.all.forEach { registerFont(bundle: .module, atPath: $0.path) }
     }
     
-    fileprivate static func registerFont(bundle: Bundle, fontName: String) {
+    fileprivate static func registerFont(bundle: Bundle, atPath: String) {
         
-        guard let fontURL = bundle.url(forResource: fontName, withExtension: "otf") ?? bundle.url(forResource: fontName, withExtension: "ttf"),
-              let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
-              let font = CGFont(fontDataProvider) else {
-            fatalError("Couldn't create font from filename: \(fontName)")
+        if
+            let fontURL = bundle.url(forResource: fontName, withExtension: "otf"),
+            let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+            let font = CGFont(fontDataProvider)
+        {
+            var error: Unmanaged<CFError>?
+            CTFontManagerRegisterGraphicsFont(font, &error)
+        } else if
+            let fontURL = bundle.url(forResource: fontName, withExtension: "ttf"),
+            let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+            let font = CGFont(fontDataProvider)
+        {
+            var error: Unmanaged<CFError>?
+            CTFontManagerRegisterGraphicsFont(font, &error)
+        } else {
+            fatalError("Couldn't create font from path: \(atPath)")
         }
-        var error: Unmanaged<CFError>?
-        CTFontManagerRegisterGraphicsFont(font, &error)
-    }
     
 }
