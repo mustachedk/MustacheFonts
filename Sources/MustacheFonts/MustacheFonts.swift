@@ -16,14 +16,14 @@ public class MustacheFonts {
     fileprivate static func registerFont(bundle: Bundle, atPath: String) {
         
         if
-            let fontURL = bundle.url(forResource: fontName, withExtension: "otf"),
+            let fontURL = bundle.url(forResource: atPath, withExtension: "otf"),
             let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
             let font = CGFont(fontDataProvider)
         {
             var error: Unmanaged<CFError>?
             CTFontManagerRegisterGraphicsFont(font, &error)
         } else if
-            let fontURL = bundle.url(forResource: fontName, withExtension: "ttf"),
+            let fontURL = bundle.url(forResource: atPath, withExtension: "ttf"),
             let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
             let font = CGFont(fontDataProvider)
         {
@@ -32,5 +32,6 @@ public class MustacheFonts {
         } else {
             fatalError("Couldn't create font from path: \(atPath)")
         }
+    }
     
 }
