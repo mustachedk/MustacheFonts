@@ -16,15 +16,17 @@ public class MustacheFonts {
     fileprivate static func registerFont(bundle: Bundle, atPath: String) {
         
         if
-            let fontURL = bundle.path(forResource: atPath, ofType: "otf"),
-            let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+            let fontPath = bundle.path(forResource: atPath, ofType: "otf"),
+            let fontURLFromPath = URL(string: fontPath),
+            let fontDataProvider = CGDataProvider(url: fontURLFromPath as CFURL),
             let font = CGFont(fontDataProvider)
         {
             var error: Unmanaged<CFError>?
             CTFontManagerRegisterGraphicsFont(font, &error)
         } else if
-            let fontURL = bundle.path(forResource: atPath, ofType: "ttf"),
-            let fontDataProvider = CGDataProvider(url: fontURL as CFURL),
+            let fontPath = bundle.path(forResource: atPath, ofType: "ttf"),
+            let fontURLFromPath = URL(string: fontPath),
+            let fontDataProvider = CGDataProvider(url: fontURLFromPath as CFURL),
             let font = CGFont(fontDataProvider)
         {
             var error: Unmanaged<CFError>?
