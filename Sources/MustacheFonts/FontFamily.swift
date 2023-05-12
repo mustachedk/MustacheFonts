@@ -29,7 +29,7 @@ public enum FontFamily {
     public static let light = FontConvertible(name: "Gotham-Light", family: "Gotham", path: "GothamLight.ttf")
     public static let lightItalic = FontConvertible(name: "Gotham-LightItalic", family: "Gotham", path: "GothamLightItalic.ttf")
     public static let medium = FontConvertible(name: "Gotham-Medium", family: "Gotham", path: "GothamMedium_1.ttf")
-    public static let medium = FontConvertible(name: "Gotham-MediumItalic", family: "Gotham", path: "GothamMediumItalic.ttf")
+    public static let mediumItalic = FontConvertible(name: "Gotham-MediumItalic", family: "Gotham", path: "GothamMediumItalic.ttf")
     public static let thin = FontConvertible(name: "Gotham-Thin", family: "Gotham", path: "Gotham-Thin.otf")
     public static let thinItalic = FontConvertible(name: "Gotham-ThinItalic", family: "Gotham", path: "Gotham-ThinItalic.otf")
     public static let ultraItalic = FontConvertible(name: "Gotham-UltraItalic", family: "Gotham", path: "Gotham-UltraItalic.otf")
