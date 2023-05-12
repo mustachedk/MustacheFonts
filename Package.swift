@@ -22,7 +22,15 @@ let package = Package(
         .target(
             name: "MustacheFonts",
             dependencies: [],
-            resources: [.process("Fonts")]),
+            resources: [
+                .process("Fonts/Gotham"),
+                .process("Fonts/Kollektif"),
+                .process("Fonts/Poppins"),
+                .process("Fonts/SFMono"),
+                .process("Fonts/SFProDisplay"),
+                .process("Fonts/SFProText"),
+                .process("Fonts/SourceSansPro"),
+            ]),
         .testTarget(
             name: "MustacheFontsTests",
             dependencies: ["MustacheFonts"]),
