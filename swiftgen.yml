@@ -1,5 +1,5 @@
 fonts:
-  inputs: Sources/MustacheFonts/Fonts
+  inputs: Sources/MustacheFonts/Media.xcassets
   outputs:
     templateName: swift5
     output: Sources/FontFamily.swift

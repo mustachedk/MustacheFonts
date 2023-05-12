@@ -22,10 +22,10 @@ public typealias Font = FontConvertible.Font
 public enum FontFamily {
   public enum Gotham {
     public static let black = FontConvertible(name: "Gotham-Black", family: "Gotham", path: "Gotham-Black.otf")
-    public static let bold = FontConvertible(name: "Gotham-Bold", family: "Gotham", path: "Gotham-Bold.otf")
+    public static let bold = FontConvertible(name: "Gotham-Bold", family: "Gotham", path: "GothamBold.ttf")
     public static let boldItalic = FontConvertible(name: "Gotham-BoldItalic", family: "Gotham", path: "GothamBoldItalic.ttf")
     public static let book = FontConvertible(name: "Gotham-Book", family: "Gotham", path: "GothamBook.ttf")
-    public static let bookItalic = FontConvertible(name: "Gotham-BookItalic", family: "Gotham", path: "GothamBookItalic.ttf")
+    public static let bookItalic = FontConvertible(name: "Gotham-BookItalic", family: "Gotham", path: "Gotham-BookItalic.otf")
     public static let light = FontConvertible(name: "Gotham-Light", family: "Gotham", path: "GothamLight.ttf")
     public static let lightItalic = FontConvertible(name: "Gotham-LightItalic", family: "Gotham", path: "GothamLightItalic.ttf")
     public static let medium = FontConvertible(name: "Gotham-Medium", family: "Gotham", path: "GothamMedium_1.ttf")
