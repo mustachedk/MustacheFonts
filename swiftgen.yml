@@ -2,6 +2,6 @@ fonts:
   inputs: Sources/MustacheFonts/Media.xcassets
   outputs:
     templateName: swift5
-    output: Sources/FontFamily.swift
+    output: Sources/MustacheFonts/FontFamily.swift
     params:
       publicAccess: true

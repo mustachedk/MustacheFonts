@@ -23,13 +23,7 @@ let package = Package(
             name: "MustacheFonts",
             dependencies: [],
             resources: [
-                .process("Fonts/Gotham"),
-                .process("Fonts/Kollektif"),
-                .process("Fonts/Poppins"),
-                .process("Fonts/SFMono"),
-                .process("Fonts/SFProDisplay"),
-                .process("Fonts/SFProText"),
-                .process("Fonts/SourceSansPro"),
+                .process("Media.xcassets")
             ]),
         .testTarget(
             name: "MustacheFontsTests",

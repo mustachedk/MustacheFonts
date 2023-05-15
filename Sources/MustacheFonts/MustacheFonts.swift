@@ -4,13 +4,13 @@ import SwiftUI
 public class MustacheFonts {
     
     public static func registerFonts() throws {
-        try FontFamily.Gotham.all.forEach { try registerFont(named: $0.name) }
-        try FontFamily.Kollektif.all.forEach { try registerFont(named: $0.name) }
-        try FontFamily.Poppins.all.forEach { try registerFont(named: $0.name) }
-        try FontFamily.SFMono.all.forEach { try registerFont(named: $0.name) }
-        try FontFamily.SFProDisplay.all.forEach { try registerFont(named: $0.name) }
-        try FontFamily.SFProText.all.forEach { try registerFont(named: $0.name) }
-        try FontFamily.SourceSansPro.all.forEach { try registerFont(named: $0.name) }
+        try FontFamily.Gotham.all.forEach { try registerFont(font: $0) }
+        try FontFamily.Kollektif.all.forEach { try registerFont(font: $0) }
+        try FontFamily.Poppins.all.forEach { try registerFont(font: $0) }
+        try FontFamily.SFMono.all.forEach { try registerFont(font: $0) }
+        try FontFamily.SFProDisplay.all.forEach { try registerFont(font: $0) }
+        try FontFamily.SFProText.all.forEach { try registerFont(font: $0) }
+        try FontFamily.SourceSansPro.all.forEach { try registerFont(font: $0) }
     }
 //
 //    fileprivate static func registerFont(bundle: Bundle, atPath: String) {
@@ -36,8 +36,8 @@ public class MustacheFonts {
 //        }
 //    }
     
-    static func registerFont(named name: String) throws {
-        guard let asset = NSDataAsset(name: "Fonts/\(name)", bundle: Bundle.module),
+    static func registerFont(font: FontConvertible) throws {
+        guard let asset = NSDataAsset(name: "\(font.name)", bundle: Bundle.module),
               let provider = CGDataProvider(data: asset.data as NSData),
               let font = CGFont(provider),
               CTFontManagerRegisterGraphicsFont(font, nil) else {
