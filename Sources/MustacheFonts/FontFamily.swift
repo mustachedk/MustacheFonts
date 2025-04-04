@@ -19,24 +19,7 @@ public typealias Font = FontConvertible.Font
 // MARK: - Fonts
 
 // swiftlint:disable identifier_name line_length type_body_length
-public enum FontFamily {
-  public enum Gotham {
-    public static let black = FontConvertible(name: "Gotham-Black", family: "Gotham", path: "Gotham-Black.otf")
-    public static let bold = FontConvertible(name: "Gotham-Bold", family: "Gotham", path: "Gotham-Bold.ttf")
-    public static let boldItalic = FontConvertible(name: "Gotham-BoldItalic", family: "Gotham", path: "Gotham-BoldItalic.ttf")
-    public static let book = FontConvertible(name: "Gotham-Book", family: "Gotham", path: "Gotham-Book.ttf")
-    public static let bookItalic = FontConvertible(name: "Gotham-BookItalic", family: "Gotham", path: "Gotham-BookItalic.ttf")
-    public static let light = FontConvertible(name: "Gotham-Light", family: "Gotham", path: "Gotham-Light.ttf")
-    public static let lightItalic = FontConvertible(name: "Gotham-LightItalic", family: "Gotham", path: "Gotham-LightItalic.ttf")
-    public static let medium = FontConvertible(name: "Gotham-Medium", family: "Gotham", path: "Gotham-Medium.ttf")
-    public static let mediumItalic = FontConvertible(name: "Gotham-MediumItalic", family: "Gotham", path: "Gotham-MediumItalic.ttf")
-    public static let thin = FontConvertible(name: "Gotham-Thin", family: "Gotham", path: "Gotham-Thin.otf")
-    public static let thinItalic = FontConvertible(name: "Gotham-ThinItalic", family: "Gotham", path: "Gotham-ThinItalic.otf")
-    public static let ultraItalic = FontConvertible(name: "Gotham-UltraItalic", family: "Gotham", path: "Gotham-UltraItalic.otf")
-    public static let xLight = FontConvertible(name: "Gotham-XLight", family: "Gotham", path: "Gotham-XLight.otf")
-    public static let xLightItalic = FontConvertible(name: "Gotham-XLightItalic", family: "Gotham", path: "Gotham-XLightItalic.otf")
-    public static let all: [FontConvertible] = [black, bold, boldItalic, book, bookItalic, light, lightItalic, medium, mediumItalic, thin, thinItalic, ultraItalic, xLight, xLightItalic]
-  }
+public enum FontFamily { 
   public enum Kollektif {
     public static let regular = FontConvertible(name: "Kollektif", family: "Kollektif", path: "Kollektif.ttf")
     public static let bold = FontConvertible(name: "Kollektif-Bold", family: "Kollektif", path: "Kollektif-Bold.ttf")
@@ -137,7 +120,7 @@ public enum FontFamily {
     public static let semiBoldItalic = FontConvertible(name: "SourceSansPro-SemiBoldItalic", family: "Source Sans Pro", path: "SourceSansPro-SemiBoldItalic.ttf")
     public static let all: [FontConvertible] = [black, blackItalic, bold, boldItalic, extraLight, extraLightItalic, italic, light, lightItalic, regular, semiBold, semiBoldItalic]
   }
-  public static let allCustomFonts: [FontConvertible] = [Gotham.all, Kollektif.all, Poppins.all, SFMono.all, SFProDisplay.all, SFProText.all, SourceSansPro.all].flatMap { $0 }
+  public static let allCustomFonts: [FontConvertible] = [Kollektif.all, Poppins.all, SFMono.all, SFProDisplay.all, SFProText.all, SourceSansPro.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }
